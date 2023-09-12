@@ -1,0 +1,1 @@
+// defining the queries that will be used for GraphQl for the sake of retrieving information.

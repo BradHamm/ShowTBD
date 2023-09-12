@@ -1,0 +1,1 @@
+// we'll still use a cleanDB file to remove information that is outside of the seed folder to ensure congruity between testing periods. Since the project itself will rely on pre-seeded information when we finalize the project, we might not even need to remove it. cleanDB will drop information from the database that isn't included in the seeds.js file.
