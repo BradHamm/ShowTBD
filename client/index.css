@@ -1,0 +1,8 @@
+/* import tailwind stuff */
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+/* any css that is too hard to implement w tailwind goes here */
