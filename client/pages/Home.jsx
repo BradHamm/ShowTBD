@@ -9,7 +9,7 @@ export default function Home() {
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/discover/movie?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3')
             .then(response => {
-                setShows(response.data);
+                setShows(response.data.results);
             })
             .catch(error => {
                 console.error(error);
