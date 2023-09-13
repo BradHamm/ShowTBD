@@ -1,7 +1,7 @@
 // resolvers will be used to path to and populate information that is retrieved from the call to the API, as well as handling the mutations of that data is relation to the database.
 
 const bcrypt = require('bcrypt');
-const User = require('./models/User'); // Import your User model
+const User = require('./models/User'); 
 
 const resolvers = {
   Mutation: {
@@ -17,8 +17,6 @@ const resolvers = {
       if (!isPasswordValid) {
         throw new Error('Invalid password - Please try again');
       }
-
-      // You can generate a JWT token here and return it if login is successful
 
       return user;
     },
