@@ -1,12 +1,15 @@
 // webpage for leaving a review for a particular TV show
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 
 function ReviewForm() {
+    let { state } = useLocation();
+    const { title, id } = state; // just in case we also need id?
     return (
         <>
             <div className="bg-slate-200 w-1/2 rounded-md flex flex-col justify-center">
-                <h2 className="text-3xl	mt-2 self-center">Title of movie</h2>
+                <h2 className="text-3xl	mt-2 self-center">{title}</h2>
                 <form action="#" className="w-2/3 self-center">
                     <div className="flex items-center justify-between mt-6">
                         <div className=" inline-block w-5/12">
