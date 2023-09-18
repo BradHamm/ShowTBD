@@ -1,5 +1,6 @@
 //homepage which will render popular tv shows from API, where users can choose to leave reviews. Also contains searchbar for fetching specific results.
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Home() {
@@ -42,9 +43,9 @@ export default function Home() {
                 {shows.map(show => (
                     <div key={show.id} className="flex mb-4 w-96 justify-between">
                         <li>{show.title}</li>
-                        <button className=" cursor-pointer bg-cyan-600 hover:bg-cyan-800 w-8 h-8 rounded-full text-white	
-
-">+</button>
+                        <Link to={`/ReviewForm`} state={{ title: `${show.title}`, id: `${show.id}`}}>
+                        <button className=" cursor-pointer bg-cyan-600 hover:bg-cyan-800 w-8 h-8 rounded-full text-white">+</button>
+                        </Link>
                     </div>
                 ))}
             </ul>
