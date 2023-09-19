@@ -23,7 +23,7 @@ function ReviewForm() {
                         </div>
                     </div>
                     <div className="mt-4">
-                        <input type="textarea" id="textarea" name="textarea" placeholder="textarea" className="w-full h-28 rounded-md placeholder-shown:pl-1.5" />
+                        <textarea id="textarea" name="textarea" placeholder="textarea" className="w-full h-28 rounded-md placeholder-shown:pl-1.5" rows="4" cols="50"></textarea>
                         <label htmlFor="textarea"></label>
                     </div>
                     <button className="bg-cyan-600 hover:bg-cyan-800 h-10 text-white rounded-md mt-8 mb-2 w-full
