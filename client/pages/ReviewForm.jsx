@@ -5,11 +5,12 @@ import { useLocation } from 'react-router-dom';
 
 function ReviewForm() {
     let { state } = useLocation();
-    const { title, id } = state; // just in case we also need id?
+    const { name, id } = state; // just in case we also need id?
+    console.log(state);
     return (
         <>
             <div className="bg-slate-200 w-1/2 rounded-md flex flex-col justify-center">
-                <h2 className="text-3xl	mt-2 self-center">{title}</h2>
+                <h2 className="text-3xl	mt-2 self-center text-black">{name}</h2>
                 <form action="#" className="w-2/3 self-center">
                     <div className="flex items-center justify-between mt-6">
                         <div className=" inline-block w-5/12">

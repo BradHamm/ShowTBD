@@ -7,7 +7,7 @@ function App() {
     return (
         <div className="min-h-screen">
             <Nav/>
-            <main className="flex flex-col justify-center items-center min-h-full bg-main-blue text-offwhite font-montserrat">
+            <main className="flex flex-col justify-center items-center min-h-full text-offwhite font-montserrat bg-main-blue">
                 <Outlet />
             </main>
         </div>
