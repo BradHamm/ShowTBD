@@ -1,9 +1,11 @@
 // connection to the Atlas DB
-mongoose.connect('mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>', {
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://bradhamopt:testpassword@showtbdcluster.brzqigu.mongodb.net', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-mongoose.connection.once('open', () => {
-  console.log('Connected to MongoDB Atlas');
-});
+const db = mongoose.connection;
+
+module.exports = db;
