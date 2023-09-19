@@ -9,7 +9,7 @@ function ReviewForm() {
     console.log(state);
     return (
         <>
-            <div className="bg-slate-200 w-1/2 rounded-md flex flex-col justify-center">
+            <div className="bg-slate-200 h-96 w-1/2 rounded-md flex flex-col justify-center mt-14">
                 <h2 className="text-3xl	mt-2 self-center text-black">{name}</h2>
                 <form action="#" className="w-2/3 self-center">
                     <div className="flex items-center justify-between mt-6">

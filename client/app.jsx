@@ -5,9 +5,9 @@ import Nav from './components/Nav';
 
 function App() {
     return (
-        <div className="h-screen">
-            <Nav/>
-            <main className="flex flex-col flex-grow items-center min-h-full text-offwhite font-montserrat bg-main-blue">
+        <div className="min-h-screen bg-main-blue">
+            <Nav />
+            <main className="flex flex-col justify-center items-center min-h-full text-offwhite font-montserrat bg-main-blue">
                 <Outlet />
             </main>
         </div>
@@ -15,3 +15,4 @@ function App() {
 }
 
 export default App;
+

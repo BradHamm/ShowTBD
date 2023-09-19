@@ -29,46 +29,58 @@ function Profile() {
   ]
 
   return (
-    <div className="flex w-1/2">
+    <div className="flex w-1/2 mt-10 gap-20">
       <div
         id="user-info"
-        className="flex flex-col border-2 w-2/3 justify-center align-center"
+        className="flex flex-col w-2/3 justify-center align-center gap-5"
       >
-        <div id="username-container" className="flex">
+        <div id="username-container" className="flex text-2xl">
           <span>{username} - Active since 09/12/2023</span>
         </div>
         <div id="fav-genre" className="flex">
-          <TopGenre genre={favgenre}/>
+          <TopGenre genre={favgenre} />
         </div>
         <Link to="/ProfileConfig">
-          <button className="rounded-full bg-indigo-500 w-auto self-start px-3 py-1">Edit Profile</button>
+          <button className="rounded-full bg-indigo-500 w-auto self-start px-3 py-1">
+            Edit Profile
+          </button>
         </Link>
-        <div id="reviews-list" className="flex flex-col">
-          {reviews.map((review, index) => (
-            <UserReviews
-              key={index}
-              show={review.show}
-              body={review.body}
-              genre={review.genre}
-              streaming={review.streaming}
-            />
-          ))}
+        <div id="reviews-list" className="flex flex-col mt-10">
+          <span className="uppercase">My reviews</span>
+          <hr className="w-2/3"></hr>
+          <div className="mt-6">
+            {reviews.length === 0 ? (
+              <span>No reviews yet.</span>
+            ) : (
+              reviews.map((review, index) => (
+                <UserReviews
+                  key={index}
+                  show={review.name}
+                  body={review.body}
+                  genre={review.genre}
+                  streaming={review.streaming}
+                />
+              ))
+            )}
+          </div>
         </div>
       </div>
       <div
         id="top-five"
-        className="flex flex-col border-2 w-1/3 justify-center align-center"
+        className="flex flex-col w-1/3 justify-center align-center gap-10"
       >
-        <div id="top-shows" className="border-2">
+        <div id="top-shows">
           <span>Favorite Shows</span>
+          <hr></hr>
           <ul id="show-list">
             {favshows.map((show, index) => (
               <TopShows key={index} title={show} />
             ))}
           </ul>
         </div>
-        <div id="top-actors" className="border-2">
+        <div id="top-actors">
           <span>Favorite Actors</span>
+          <hr></hr>
           <ul id="actor-list">
             {favceleb.map((actor, index) => (
               <TopCelebs key={index} name={actor} />
