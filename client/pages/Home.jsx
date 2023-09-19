@@ -12,7 +12,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3')
+        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3')
             .then(response => {
                 setShows(response.data.results);
             })
@@ -23,7 +23,7 @@ export default function Home() {
 
     const fetchDataFromTMDb = async () => {
         try {
-            const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3&query=${searchInput}`)
+            const response = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3&query=${searchInput}`)
             console.log(response.data);
             console.log(searchInput);
             setSearchInput('');
@@ -42,9 +42,9 @@ export default function Home() {
             <ul className='p-5'>
                 {shows.map(show => (
                     <div key={show.id} className="flex mb-4 w-96 justify-between">
-                        <li>{show.title}</li>
-                        <Link to={`/ReviewForm`} state={{ title: `${show.title}`, id: `${show.id}`}}>
-                        <button className=" cursor-pointer bg-cyan-600 hover:bg-cyan-800 w-8 h-8 rounded-full text-white">+</button>
+                        <li>{show.name}</li>
+                        <Link to={`/ReviewForm`} state={{ name: `${show.name}`, id: `${show.id}` }}>
+                            <button className=" cursor-pointer bg-cyan-600 hover:bg-cyan-800 w-8 h-8 rounded-full text-white">+</button>
                         </Link>
                     </div>
                 ))}
