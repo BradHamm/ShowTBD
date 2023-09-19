@@ -5,13 +5,12 @@ import Nav from './components/Nav';
 
 function App() {
     return (
-        <>
+        <div className="min-h-screen">
             <Nav/>
-            <main>
+            <main className="flex flex-col justify-center items-center min-h-full bg-main-blue text-offwhite font-montserrat">
                 <Outlet />
             </main>
-
-        </>
+        </div>
     );
 }
 

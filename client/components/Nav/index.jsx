@@ -3,34 +3,26 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Nav() {
-  const currentPage = useLocation().pathname;
   return (
-    <ul className="flex flex-wrap gap-20 uppercase">
-      <li>
-        <Link 
-          to="/"
-          className={`hover:underline ${currentPage === '/' ? 'bg-black text-white py-1 px-2 rounded' : 'bg-none text-black py-1 px-2 rounded'}`}
-        >
-          Home
+    <div className="flex justify-center items-center bg-navbar-blue text-offwhite py-8 drop-shadow-md">
+      <div className="flex w-1/2 justify-between items-center lowercase font-montserrat">
+        <Link to="/">
+          <h1 className="font-outfit text-4xl text-white">ShowTracker</h1>
         </Link>
-      </li>
-      <li>
-        <Link 
-          to="/Profile"
-          className={`hover:underline ${currentPage === '/Profile' ? 'bg-black text-white py-1 px-2 rounded' : 'bg-none text-black py-1 px-2 rounded'}`}
-        >
-          Profile
-        </Link>
-      </li>
-      <li>
-        <Link 
-          to="/Login"
-          className={`hover:underline ${currentPage === '/Login' ? 'bg-black text-white py-1 px-2 rounded' : 'bg-none text-black py-1 px-2 rounded'}`}
-        >
-          Login
-        </Link>
-      </li>
-    </ul>
+        <ul className="flex flex-wrap gap-20">
+          <li>
+            <Link to="/Profile" className={`hover:text-hoverwhite`}>
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/Login" className={`hover:text-hoverwhite`}>
+              Login
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

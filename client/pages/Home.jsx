@@ -34,10 +34,11 @@ export default function Home() {
     };
 
     return (
-        <>
-            <div className="flex w-96 justify-between p-5">
-                <input className='' type="text" name="searchbar" id="searchbar" value={searchInput} onChange={handleSearchInput} placeholder="Search for a show" />
-                <button id="btnSearch" onClick={fetchDataFromTMDb} className='bg-cyan-600 hover:bg-cyan-800 w-16 h-10 text-white rounded-md'>Search</button>
+        <div className="flex flex-col w-1/2 justify-center items-center pt-10">
+            <h2 className="text-4xl">What have you been binging lately?</h2>
+            <div className="flex w-96 p-5 w-full gap-5 justify-center items-center">
+                <input className='w-1/2 rounded-full py-2 pl-3 text-black' type="text" name="searchbar" id="searchbar" value={searchInput} onChange={handleSearchInput} placeholder="Search for a show" />
+                <button id="btnSearch" onClick={fetchDataFromTMDb} className='bg-cyan-600 hover:bg-cyan-800 w-16 h-10 text-white rounded-full'>Search</button>
             </div>
             <ul className='p-5'>
                 {shows.map(show => (
@@ -49,7 +50,7 @@ export default function Home() {
                     </div>
                 ))}
             </ul>
-        </>
+        </div>
     );
 }
 
