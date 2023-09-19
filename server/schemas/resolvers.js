@@ -1,7 +1,6 @@
-// resolvers will be used to path to and populate information that is retrieved from the call to the API, as well as handling the mutations of that data is relation to the database.
-
 const bcrypt = require('bcrypt');
-const User = require('./models/User'); 
+const User = require('../models/User');
+const { signToken } = require('../utils/auth'); 
 
 const resolvers = {
   Mutation: {
@@ -18,13 +17,32 @@ const resolvers = {
         throw new Error('Invalid password - Please try again');
       }
 
-      return user;
+      const token = signToken({ userId: user._id, username: user.username });
+      
+      return {
+        token,
+        user,
+      };
     },
+    createUser: async (_, { username, password, email }) => {
 
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = new User({
+        username,
+        password: hashedPassword,
+        email,
+      });
 
-
-
-
-
+      await newUser.save();
+      
+      const token = signToken({ userId: newUser._id, username: newUser.username });
+      
+      return {
+        token,
+        user: newUser,
+      };
+    },
   },
 };
+
+module.exports = resolvers;
