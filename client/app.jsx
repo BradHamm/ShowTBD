@@ -5,8 +5,8 @@ import Nav from './components/Nav';
 
 function App() {
     return (
-        <div className="min-h-screen">
-            <Nav/>
+        <div className="min-h-screen bg-main-blue">
+            <Nav />
             <main className="flex flex-col justify-center items-center min-h-full text-offwhite font-montserrat bg-main-blue">
                 <Outlet />
             </main>
@@ -15,3 +15,4 @@ function App() {
 }
 
 export default App;
+
