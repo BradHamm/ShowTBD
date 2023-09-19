@@ -12,7 +12,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=977f0b8bb93b6b77c36f6cbeb9c655a3')
+        axios.get('https://api.themoviedb.org/3/trending/tv/day?language=en-US&api_key=977f0b8bb93b6b77c36f6cbeb9c655a3')
             .then(response => {
                 setShows(response.data.results);
             })
