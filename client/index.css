@@ -5,4 +5,6 @@
 
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Outfit:wght@700&display=swap');
+
 /* any css that is too hard to implement w tailwind goes here */
